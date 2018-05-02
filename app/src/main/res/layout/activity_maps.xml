@@ -1,124 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapsActivity">
 
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="0dp"
-    android:layout_height="100dp"
-
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent" />
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/christie_cupcake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
         android:text="Christie Cupcake"
         android:textColor="#FFF32C67"
-        android:textSize="30sp"
-        app:fontFamily="@font/pacifico"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="26sp"
+        app:fontFamily="@font/pacifico" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="45dp"
+        android:id="@+id/call_button"
+        android:layout_width="72dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignBottom="@+id/christie_cupcake"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/email_button"
         android:backgroundTint="#f32c67"
-        android:drawableLeft="@drawable/ic_call_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:drawableLeft="@drawable/ic_call_24dp" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="45dp"
+        android:id="@+id/email_button"
+        android:layout_width="72dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignBaseline="@+id/christie_cupcake"
+        android:layout_toRightOf="@+id/christie_cupcake"
+        android:layout_marginLeft="8dp"
         android:backgroundTint="#f32c67"
-        android:drawableLeft="@drawable/ic_email_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:drawableLeft="@drawable/ic_email_24dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/services"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@id/christie_cupcake"
+        android:layout_centerHorizontal="true"
+        android:text="BROWS. LASHES. MAKEUP. NAILS. GIGGLES"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_margin="8dp"
+        android:layout_above="@id/map"
         android:drawableLeft="@drawable/ic_place_24dp"
-        android:text="228 E Calder Way | State College, Pennsylvania 16801"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="441dp" />
+        android:text="228 E Calder Way | State College, Pennsylvania 16801"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/brows"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:layout_toLeftOf="@+id/makeup"
+        android:layout_above="@+id/lashes"
         app:srcCompat="@drawable/brows" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/lashes"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/nails"
+        android:layout_above="@+id/location"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/lashes"
-        tools:layout_editor_absoluteY="257dp" />
+        app:srcCompat="@drawable/lashes" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/nails"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/location"
+        android:layout_marginRight="16dp"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:srcCompat="@drawable/pineapplenails"
-        tools:layout_editor_absoluteY="257dp" />
+        app:srcCompat="@drawable/pineapplenails" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/makeup"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/nails"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:srcCompat="@drawable/makeup" />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
