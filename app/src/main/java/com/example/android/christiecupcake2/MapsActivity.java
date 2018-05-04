@@ -18,7 +18,6 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-
 /**
  * A styled map using JSON styles from a raw resource.
  */
@@ -43,20 +42,22 @@ public class MapsActivity extends AppCompatActivity
     }
 
     //method to call
-    private void dialcupcake(final String phoneNumber) {
+    public void dialCupcake(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:0123456789"));
-        startActivity(intent);
+        intent.setData(Uri.parse("tel:8142310170"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
 //method to email
-    private void emailcupcake(View view){
-    Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_SUBJECT, "I'd like to book an appointment");
-
+    public void emailCupcake(View view) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:guestservices@lookshairdesign.com")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Book Me with Christie Cupcake Please!");
         if (intent.resolveActivity(getPackageManager()) != null) {
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
 
 //    private void dialContactPhone(final String phoneNumber) {
